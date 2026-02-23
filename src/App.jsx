@@ -274,7 +274,7 @@ function DrawerContent_Inner() {
 
   const headerContent = (
     <>
-      <p style={{ fontSize: 13, fontWeight: 600, color: '#313283', margin: '0 0 12px' }}>
+      <p className='font-baloo pt-4' style={{ fontSize: 24, fontWeight: 600, color: '#313283', margin: '0 0 12px' }}>
         Find your Spine Age
       </p>
       {!showResult && <Stepper totalSteps={total} currentStep={currentStep} />}
@@ -299,7 +299,9 @@ function DrawerContent_Inner() {
           <DialogContent
             className="w-[90%] p-0 h-[90vh] grid grid-cols-2 overflow-hidden"
           >
-            <div className='w-full h-full bg-[#F5F5FF]'></div>
+            <div className='w-full h-full flex justify-center items-center bg-[#F5F5FF]'>
+              <img className='w-[90%] cursor-pointer' src='https://cdn.shopify.com/s/files/1/0248/7766/2271/files/Rectangle_59.png?v=1771847444' />
+            </div>
             <div className='relative'>
               <DialogHeader style={{
                 padding: '20px 24px 16px',
