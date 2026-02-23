@@ -1,43 +1,197 @@
 export const scoreBasedProduct = [
-  { id: 1, score: 1, product: [{ id: 1, handle: "ortho-wave-latex-mattress" }] },
-  { id: 2, score: 2, product: [{ id: 1, handle: "ortho-wave-latex-mattress" }] },
-  { id: 3, score: 3, product: [{ id: 1, handle: "ortho-wave-latex-mattress" }] },
-  { id: 4, score: 4, product: [{ id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" },{ id: 2, handle: "plus-memory-foam-mattress" }] },
-  { id: 5, score: 5, product: [{ id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" },{ id: 2, handle: "plus-memory-foam-mattress" }]},
-  { id: 6, score: 6, product: [{ id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" },{ id: 2, handle: "plus-memory-foam-mattress" }] },
-  { id: 7, score: 7, product: [{ id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" },{ id: 2, handle: "plus-memory-foam-mattress" }] },
-  { id: 8, score: 8, product: [{ id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" }] },
-  { id: 9, score: 9, product: [{ id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" }] },
-  { id: 10, score: 10, product: [{ id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" }] },
-  { id: 11, score: 11, product: [{ id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" }] },
-  { id: 12, score: 12, product: [{ id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" }] },
-  { id: 13, score: 13, product: [{ id: 1, handle: "ortho-bounce-mattress" }] },
-  { id: 14, score: 14, product: [{ id: 1, handle: "ortho-bounce-mattress" }] },
-  { id: 15, score: 15, product: [{ id: 1, handle: "ortho-bounce-mattress" }] },
-  { id: 16, score: 16, product: [{ id: 1, handle: "ortho-bounce-mattress" }] },
-  { id: 17, score: 17, product: [{ id: 1, handle: "ortho-bounce-mattress" }] },
-  { id: 18, score: 18, product: [{ id: 1, handle: "ortho-bounce-mattress" }] },
-  { id: 19, score: 19, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 20, score: 20, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 21, score: 21, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 22, score: 22, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 23, score: 23, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 24, score: 24, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 25, score: 25, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 26, score: 26, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 27, score: 27, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 28, score: 28, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 29, score: 29, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 30, score: 30, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 31, score: 31, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 32, score: 32, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 33, score: 33, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 34, score: 34, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 35, score: 35, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 36, score: 36, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 37, score: 37, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 38, score: 38, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 39, score: 39, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 40, score: 40, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] },
-  { id: 41, score: 41, product: [{ id: 1, handle: "ortho-plus-coir-mattress" } , { id:2 , handle: "ultra-lounge-mattress"}] }
+  {
+    id: 1,
+    score: 1,
+    product: [
+      { id: 1, handle: "ortho-wave-latex-mattress" }
+    ],
+    spineAgeIndication: "Young Spine / Optimal Spine Age",
+    description: "Excellent posture, full motion, no tenderness or mobility issues.",
+    key_message: "Your Spine is Ageing well! Keep it up with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 2,
+    score: 2,
+    product: [
+      { id: 1, handle: "ortho-wave-latex-mattress" }
+    ],
+    spineAgeIndication: "Young Spine / Optimal Spine Age",
+    description: "Excellent posture, full motion, no tenderness or mobility issues.",
+    key_message: "Your Spine is Ageing well! Keep it up with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 3,
+    score: 3,
+    product: [
+      { id: 1, handle: "ortho-wave-latex-mattress" }
+    ],
+    spineAgeIndication: "Young Spine / Optimal Spine Age",
+    description: "Excellent posture, full motion, no tenderness or mobility issues.",
+    key_message: "Your Spine is Ageing well! Keep it up with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 4,
+    score: 4,
+    product: [
+      { id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" },
+      { id: 2, handle: "plus-memory-foam-mattress" }
+    ],
+    spineAgeIndication: "Youthful Spine / Early Signs of Ageing",
+    description:"Slight asymmetry, rare stiffness, minor functional limitation",
+    key_message:"Your Spine may be Ageing faster than you think. Make sure you rest it well with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 5,
+    score: 5,
+    product: [
+      { id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" },
+      { id: 2, handle: "plus-memory-foam-mattress" }
+    ],
+    spineAgeIndication: "Youthful Spine / Early Signs of Ageing",
+    description:"Slight asymmetry, rare stiffness, minor functional limitation",
+    key_message:"Your Spine may be Ageing faster than you think. Make sure you rest it well with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 6,
+    score: 6,
+    product: [
+      { id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" },
+      { id: 2, handle: "plus-memory-foam-mattress" }
+    ],
+    spineAgeIndication: "Youthful Spine / Early Signs of Ageing",
+    description:"Slight asymmetry, rare stiffness, minor functional limitation",
+    key_message:"Your Spine may be Ageing faster than you think. Make sure you rest it well with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 7,
+    score: 7,
+    product: [
+      { id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" },
+      { id: 2, handle: "plus-memory-foam-mattress" }
+    ],
+    spineAgeIndication: "Youthful Spine / Early Signs of Ageing",
+    description:"Slight asymmetry, rare stiffness, minor functional limitation",
+    key_message:"Your Spine may be Ageing faster than you think. Make sure you rest it well with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 8,
+    score: 8,
+    product: [
+      { id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" }
+    ],
+    spineAgeIndication:"Adult Spine / Moderately Ageing Spine",
+    description:"Noticeable deviations, moderate stiffness/discomfort, some difficulty.",
+    key_message:"Your Spine may be Ageing faster than you. Prevent this with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 9,
+    score: 9,
+    product: [
+      { id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" }
+    ],
+    spineAgeIndication:"Adult Spine / Moderately Ageing Spine",
+    description:"Noticeable deviations, moderate stiffness/discomfort, some difficulty.",
+    key_message:"Your Spine may be Ageing faster than you. Prevent this with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 10,
+    score: 10,
+    product: [
+      { id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" }
+    ],
+    spineAgeIndication:"Adult Spine / Moderately Ageing Spine",
+    description:"Noticeable deviations, moderate stiffness/discomfort, some difficulty.",
+    key_message:"Your Spine may be Ageing faster than you. Prevent this with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 11,
+    score: 11,
+    product: [
+      { id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" }
+    ],
+    spineAgeIndication:"Adult Spine / Moderately Ageing Spine",
+    description:"Noticeable deviations, moderate stiffness/discomfort, some difficulty.",
+    key_message:"Your Spine may be Ageing faster than you. Prevent this with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 12,
+    score: 12,
+    product: [
+      { id: 1, handle: "enrich-5-zone-smart-profile-foam-mattress" }
+    ],
+    spineAgeIndication:"Adult Spine / Moderately Ageing Spine",
+    description:"Noticeable deviations, moderate stiffness/discomfort, some difficulty.",
+    key_message:"Your Spine may be Ageing faster than you. Prevent this with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 13,
+    score: 13,
+    product: [
+      { id: 1, handle: "ortho-bounce-mattress" }
+    ],
+    spineAgeIndication :"Mature Spine / Fast Ageing Spine",
+    description:"Marked postural change, reduced mobility, frequent tenderness",
+    key_message:"Feeling 10 years older than you are when you wake up? We are here to take care of your spine with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 14,
+    score: 14,
+    product: [
+      { id: 1, handle: "ortho-bounce-mattress" }
+    ],
+    spineAgeIndication :"Mature Spine / Fast Ageing Spine",
+    description:"Marked postural change, reduced mobility, frequent tenderness",
+    key_message:"Feeling 10 years older than you are when you wake up? We are here to take care of your spine with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 15,
+    score: 15,
+    product: [
+      { id: 1, handle: "ortho-bounce-mattress" }
+    ],
+    spineAgeIndication :"Mature Spine / Fast Ageing Spine",
+    description:"Marked postural change, reduced mobility, frequent tenderness",
+    key_message:"Feeling 10 years older than you are when you wake up? We are here to take care of your spine with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 16,
+    score: 16,
+    product: [
+      { id: 1, handle: "ortho-bounce-mattress" }
+    ],
+    spineAgeIndication :"Mature Spine / Fast Ageing Spine",
+    description:"Marked postural change, reduced mobility, frequent tenderness",
+    key_message:"Feeling 10 years older than you are when you wake up? We are here to take care of your spine with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 17,
+    score: 17,
+    product: [
+      { id: 1, handle: "ortho-bounce-mattress" }
+    ],
+    spineAgeIndication :"Mature Spine / Fast Ageing Spine",
+    description:"Marked postural change, reduced mobility, frequent tenderness",
+    key_message:"Feeling 10 years older than you are when you wake up? We are here to take care of your spine with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 18,
+    score: 18,
+    product: [
+      { id: 1, handle: "ortho-bounce-mattress" }
+    ],
+    spineAgeIndication :"Mature Spine / Fast Ageing Spine",
+    description:"Marked postural change, reduced mobility, frequent tenderness",
+    key_message:"Feeling 10 years older than you are when you wake up? We are here to take care of your spine with Nilkamal Sleep Ortho Mattress"
+  },
+  {
+    id: 19,
+    score: 19,
+    product: [
+      { id: 1, handle: "ortho-plus-coir-mattress" },
+      { id: 2, handle: "ultra-lounge-mattress" }
+    ],
+    spineAgeIndication:"Aged Spine / Significant Structural Change",
+    description:"Severe postural deformity, many tender spots, pronounced limitations",
+    key_message:"We support your Spine the way you want, rest it well with Nilkamal Sleep Ortho Mattress"
+  }
 ];

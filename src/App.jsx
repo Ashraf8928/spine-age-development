@@ -5,6 +5,12 @@ import {
   DrawerHeader,
   DrawerTrigger,
 } from "@/components/ui/drawer"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import { useEffect, useState } from 'react'
 import View from './views/view'
 import StepOne from './views/stepOne'
@@ -66,6 +72,94 @@ function Stepper({ totalSteps, currentStep }) {
   )
 }
 
+function FormContent({ showResult, validationError, validationErrors, handleContinue, goPrev }) {
+  const {
+    currentStep: contextStep,
+  } = useSpineForm();
+
+  const total = STEPS.length
+  const currentStep = contextStep
+  const isFirst = currentStep === 1
+  const isLast = currentStep === total
+
+  return (
+    <>
+      {showResult ? (
+        <ResultScreen />
+      ) : (
+        <>
+          <View steps={STEPS} currentStep={currentStep} validationErrors={validationErrors} />
+
+          {validationError && (
+            <div style={{
+              padding: '0 24px',
+              marginBottom: '8px'
+            }}>
+              <p style={{
+                fontSize: '13px',
+                color: '#ef4444',
+                textAlign: 'center'
+              }}>
+                {validationError}
+              </p>
+            </div>
+          )}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              padding: "16px 24px 24px",
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              width: "100%",
+              background: "#fff",
+              borderTop: "1px solid #f0f0f0",
+              zIndex: 1000
+            }}
+          >
+            <div style={{ display: 'flex', gap: 8 }}>
+              <button
+                onClick={goPrev}
+                disabled={isFirst}
+                style={{
+                  width: 40, height: 40, borderRadius: '50%',
+                  border: '1.5px solid #ddddf0', background: '#fff',
+                  fontSize: 20, cursor: isFirst ? 'not-allowed' : 'pointer',
+                  opacity: isFirst ? 0.3 : 1,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center'
+                }}
+              >‹</button>
+              <button
+                onClick={handleContinue}
+                disabled={isLast}
+                style={{
+                  width: 40, height: 40, borderRadius: '50%',
+                  border: '1.5px solid #ddddf0', background: '#fff',
+                  fontSize: 20, cursor: isLast ? 'not-allowed' : 'pointer',
+                  opacity: isLast ? 0.3 : 1,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center'
+                }}
+              >›</button>
+            </div>
+            <button
+              onClick={handleContinue}
+              style={{
+                height: 44, padding: '0 32px', borderRadius: 22,
+                background: '#313283', color: '#fff',
+                fontSize: 15, fontWeight: 600, border: 'none', cursor: 'pointer'
+              }}
+            >
+              {isLast ? 'Submit' : 'Continue'}
+            </button>
+          </div>
+        </>
+      )}
+    </>
+  )
+}
+
 function DrawerContent_Inner() {
   const {
     currentStep: contextStep,
@@ -81,11 +175,24 @@ function DrawerContent_Inner() {
   const [showResult, setShowResult] = useState(false)
   const [validationError, setValidationError] = useState('')
   const [validationErrors, setValidationErrors] = useState([])
+  const [isDesktop, setIsDesktop] = useState(false)
 
   const total = STEPS.length
   const currentStep = contextStep
   const isFirst = currentStep === 1
   const isLast = currentStep === total
+
+  // Check if desktop
+  useEffect(() => {
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768)
+    }
+
+    checkDesktop()
+    window.addEventListener('resize', checkDesktop)
+
+    return () => window.removeEventListener('resize', checkDesktop)
+  }, [])
 
   const goNext = () => {
     if (currentStep < total) {
@@ -165,89 +272,63 @@ function DrawerContent_Inner() {
     }
   }
 
-//   useEffect(() => {
-//   fetch("https://www.nilkamalsleep.com/products/comfispine-mattress.json")
-//     .then(res => res.json())
-//     .then(data => {
-//       console.log("Console Product Data " , data.product);
-//     });
-// }, []);
+  const headerContent = (
+    <>
+      <p className='font-baloo pt-4' style={{ fontSize: 24, fontWeight: 600, color: '#313283', margin: '0 0 12px' }}>
+        Find your Spine Age
+      </p>
+      {!showResult && <Stepper totalSteps={total} currentStep={currentStep} />}
+    </>
+  )
 
+  const formContent = (
+    <FormContent
+      showResult={showResult}
+      validationError={validationError}
+      validationErrors={validationErrors}
+      handleContinue={handleContinue}
+      goPrev={goPrev}
+    />
+  )
 
   return (
     <>
-      <Drawer open={open} onOpenChange={handleOpenChange}>
-        <DrawerTrigger>Open</DrawerTrigger>
-        <DrawerContent>
-
-          <DrawerHeader>
-            <p style={{ fontSize: 13, fontWeight: 600, color: '#313283', margin: '0 0 12px' }}>
-              Find your Spine Age
-            </p>
-            {!showResult && <Stepper totalSteps={total} currentStep={currentStep} />}
-          </DrawerHeader>
-
-          {showResult ? (
-            <ResultScreen />
-          ) : (
-            <>
-              <View steps={STEPS} currentStep={currentStep} validationErrors={validationErrors} />
-
-              {validationError && (
-                <div style={{
-                  padding: '0 24px',
-                  marginBottom: '8px'
-                }}>
-                  <p style={{
-                    fontSize: '13px',
-                    color: '#ef4444',
-                    textAlign: 'center'
-                  }}>
-                    {validationError}
-                  </p>
-                </div>
-              )}
-
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 24px 24px' }}>
-                <div style={{ display: 'flex', gap: 8 }}>
-                  <button
-                    onClick={goPrev}
-                    disabled={isFirst}
-                    style={{
-                      width: 40, height: 40, borderRadius: '50%',
-                      border: '1.5px solid #ddddf0', background: '#fff',
-                      fontSize: 20, cursor: isFirst ? 'not-allowed' : 'pointer',
-                      opacity: isFirst ? 0.3 : 1,
-                      display: 'flex', alignItems: 'center', justifyContent: 'center'
-                    }}
-                  >‹</button>
-                  <button
-                    onClick={handleContinue}
-                    disabled={isLast}
-                    style={{
-                      width: 40, height: 40, borderRadius: '50%',
-                      border: '1.5px solid #ddddf0', background: '#fff',
-                      fontSize: 20, cursor: isLast ? 'not-allowed' : 'pointer',
-                      opacity: isLast ? 0.3 : 1,
-                      display: 'flex', alignItems: 'center', justifyContent: 'center'
-                    }}
-                  >›</button>
-                </div>
-                <button
-                  onClick={handleContinue}
-                  style={{
-                    height: 44, padding: '0 32px', borderRadius: 22,
-                    background: '#313283', color: '#fff',
-                    fontSize: 15, fontWeight: 600, border: 'none', cursor: 'pointer'
-                  }}
-                >
-                  {isLast ? 'Submit' : 'Continue'}
-                </button>
+      {isDesktop ? (
+        <Dialog open={open} onOpenChange={handleOpenChange}>
+          <DialogTrigger>Open</DialogTrigger>
+          <DialogContent
+            className="w-[90%] p-0 h-[90vh] grid grid-cols-2 overflow-hidden"
+          >
+            <div className='w-full h-full flex justify-center items-center bg-[#F5F5FF]'>
+              <img className='w-[90%] cursor-pointer' src='https://cdn.shopify.com/s/files/1/0248/7766/2271/files/Rectangle_59.png?v=1771847444' />
+            </div>
+            <div className='relative'>
+              <DialogHeader style={{
+                padding: '20px 24px 16px',
+                borderBottom: '1px solid #f0f0f0'
+              }}>
+                {headerContent}
+              </DialogHeader>
+              <div style={{
+                overflowY: 'auto',
+                flex: 1
+              }}>
+                {formContent}
               </div>
-            </>
-          )}
-        </DrawerContent>
-      </Drawer>
+            </div>
+          </DialogContent>
+        </Dialog>
+      ) : (
+        <Drawer open={open} onOpenChange={handleOpenChange}>
+          <DrawerTrigger>Open</DrawerTrigger>
+          <DrawerContent>
+            <DrawerHeader>
+              {headerContent}
+            </DrawerHeader>
+            {formContent}
+          </DrawerContent>
+        </Drawer>
+      )}
     </>
   )
 }
