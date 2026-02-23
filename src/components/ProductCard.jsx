@@ -12,7 +12,7 @@ export default function ProductCard({ product }) {
         <img
           src={image}
           alt={product.title}
-          className="w-full h-[260px] object-cover"
+          className="w-full h-65 object-cover"
         />
 
         <div className="absolute top-4 left-4 bg-indigo-600 text-white text-xs px-3 py-1 rounded-lg">
