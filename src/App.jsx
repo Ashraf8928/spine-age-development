@@ -104,17 +104,21 @@ function FormContent({ showResult, validationError, validationErrors, handleCont
               </p>
             </div>
           )}
-
-          <div style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'space-between', 
-            padding: '16px 24px 24px',
-            position: 'sticky',
-            bottom: '0px',
-            background: '#fff',
-            borderTop: '1px solid #f0f0f0'
-          }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              padding: "16px 24px 24px",
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              width: "100%",
+              background: "#fff",
+              borderTop: "1px solid #f0f0f0",
+              zIndex: 1000
+            }}
+          >
             <div style={{ display: 'flex', gap: 8 }}>
               <button
                 onClick={goPrev}
@@ -183,10 +187,10 @@ function DrawerContent_Inner() {
     const checkDesktop = () => {
       setIsDesktop(window.innerWidth >= 768)
     }
-    
+
     checkDesktop()
     window.addEventListener('resize', checkDesktop)
-    
+
     return () => window.removeEventListener('resize', checkDesktop)
   }, [])
 
@@ -278,7 +282,7 @@ function DrawerContent_Inner() {
   )
 
   const formContent = (
-    <FormContent 
+    <FormContent
       showResult={showResult}
       validationError={validationError}
       validationErrors={validationErrors}
@@ -292,20 +296,23 @@ function DrawerContent_Inner() {
       {isDesktop ? (
         <Dialog open={open} onOpenChange={handleOpenChange}>
           <DialogTrigger>Open</DialogTrigger>
-          <DialogContent 
-            className="max-w-125 p-0 max-h-[85vh] flex flex-col"
+          <DialogContent
+            className="w-[90%] p-0 h-[90vh] grid grid-cols-2 overflow-hidden"
           >
-            <DialogHeader style={{ 
-              padding: '20px 24px 16px',
-              borderBottom: '1px solid #f0f0f0'
-            }}>
-              {headerContent}
-            </DialogHeader>
-            <div style={{
-              overflowY: 'auto',
-              flex: 1
-            }}>
-              {formContent}
+            <div className='w-full h-full bg-[#F5F5FF]'></div>
+            <div className='relative'>
+              <DialogHeader style={{
+                padding: '20px 24px 16px',
+                borderBottom: '1px solid #f0f0f0'
+              }}>
+                {headerContent}
+              </DialogHeader>
+              <div style={{
+                overflowY: 'auto',
+                flex: 1
+              }}>
+                {formContent}
+              </div>
             </div>
           </DialogContent>
         </Dialog>

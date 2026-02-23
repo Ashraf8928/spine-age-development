@@ -19,7 +19,7 @@ export default function StepSeven() {
     };
 
     return (
-        <div style={{ padding: '24px', maxHeight: '400px', overflowY: 'auto' }}>
+        <div style={{ padding: '24px', maxHeight: '468px', overflowY: 'auto' }}>
             <h2 style={{
                 fontSize: '14px',
                 fontWeight: 700,
