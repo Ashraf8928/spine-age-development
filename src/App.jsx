@@ -208,7 +208,7 @@ function DrawerContent_Inner() {
                 </div>
               )}
 
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 24px 24px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 24px 24px' , position: 'fixed' , bottom:'0px', width:'100%' }}>
                 <div style={{ display: 'flex', gap: 8 }}>
                   <button
                     onClick={goPrev}
