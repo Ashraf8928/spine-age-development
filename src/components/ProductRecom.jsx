@@ -14,6 +14,8 @@ export default function ProductRecom({ score }) {
     item => item.score === finalScore
   );
 
+  console.log("scoreBasedData" , scoreBasedData);
+
   // 🔥 fetch products using handle
   useEffect(() => {
     if (!scoreBasedData?.product) return;
@@ -45,6 +47,18 @@ export default function ProductRecom({ score }) {
       <h2 className="text-xl font-semibold mb-6">
         Product recommend {score}
       </h2>
+
+      <h3>
+        Key Message : {scoreBasedData.key_message}
+      </h3>
+
+      <h3>
+        Description : {scoreBasedData.description}
+      </h3>
+
+      <h3>
+        spineAgeIndication : {scoreBasedData.spineAgeIndication}
+      </h3>
 
       {/* Product Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
