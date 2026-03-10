@@ -209,13 +209,9 @@ export const questionAnswer = [
           { id: 2, answer: "Mild", point: 1 },
           { id: 3, answer: "Prominent", point: 2 }
         ]
-      }
-    ]
-  },
-  {
-    step_six: [
+      },
       {
-        id: 1,
+        id: 4,
         question: "Recent height loss (>1cm over 2–3 years)",
         answer: [
           { id: 1, answer: "No", point: 0 },

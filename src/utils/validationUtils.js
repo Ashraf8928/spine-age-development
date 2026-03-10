@@ -7,7 +7,7 @@ const STEP_KEY_TO_INDEX = {
     'step_three': 2,
     'step_four': 3,
     'step_five': 4,
-    'step_six': 5
+    // 'step_six': 5
 };
 
 /**
@@ -70,7 +70,7 @@ export function validateStep(stepKey, selections) {
  * @returns {string|null} Step key or null if invalid
  */
 export function getStepKey(stepNumber) {
-    const stepKeys = ['step_one', 'step_two', 'step_three', 'step_four', 'step_five', 'step_six'];
+    const stepKeys = ['step_one', 'step_two', 'step_three', 'step_four', 'step_five'];
 
     if (stepNumber < 1 || stepNumber > 6) {
         return null;
