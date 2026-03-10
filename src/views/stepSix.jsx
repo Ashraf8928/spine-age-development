@@ -69,7 +69,9 @@ export default function StepSix({ validationErrors = [] }) {
                                             cursor: 'pointer',
                                             background: isSelected ? '#313283' : '#D7D8FF',
                                             color: isSelected ? '#FFFFFF' : '#313283',
-                                            transition: 'all 0.2s ease'
+                                            transition: 'all 0.2s ease',
+                                            lineHeight : 'normal',
+                                            textAlign : 'center'
                                         }}
                                     >
                                         {ans.answer}

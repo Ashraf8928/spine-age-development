@@ -25,13 +25,13 @@ export default function StepOne({ validationErrors = [] }) {
     return (
         <div style={{ padding: '24px', maxHeight: '468px', overflowY: 'auto' }}>
             <h2 style={{
-                fontSize: '14px',
+                fontSize: '20px',
                 fontWeight: 700,
                 color: '#313283',
                 letterSpacing: '0.5px',
                 marginBottom: '24px',
                 textTransform: 'uppercase'
-            }}>
+            }} className='font-dm'>
                 Daily Observations
             </h2>
 
@@ -43,17 +43,19 @@ export default function StepOne({ validationErrors = [] }) {
                     <div
                         key={q.id}
                         ref={(el) => questionRefs.current[q.id] = el}
-                        style={{ marginBottom: '24px' }}
+                        style={{ marginBottom: '60px' }}
+                        className='font-dm'
                     >
                         <p style={{
-                            fontSize: '14px',
-                            color: '#333',
-                            marginBottom: '12px',
-                            lineHeight: '1.5'
+                            fontSize: '18px',
+                            color: '#313283',
+                            marginBottom: '14px',
+                            lineHeight: '1.5',
+                            textTransform : "capitalize"
                         }}>
                             {q.question}
                         </p>
-                        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                             {q.answer.map((ans) => {
                                 const isSelected = selectedAnswerId === ans.id;
                                 return (
@@ -62,14 +64,16 @@ export default function StepOne({ validationErrors = [] }) {
                                         onClick={() => handleAnswer(q.id, ans.id, ans.point)}
                                         style={{
                                             padding: '10px 24px',
-                                            borderRadius: '8px',
+                                            borderRadius: '30px',
                                             border: 'none',
                                             fontSize: '14px',
                                             fontWeight: 600,
                                             cursor: 'pointer',
                                             background: isSelected ? '#313283' : '#D7D8FF',
                                             color: isSelected ? '#FFFFFF' : '#313283',
-                                            transition: 'all 0.2s ease'
+                                            transition: 'all 0.2s ease',
+                                            lineHeight : 'normal',
+                                            textAlign : 'center'
                                         }}
                                     >
                                         {ans.answer}

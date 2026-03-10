@@ -12,7 +12,7 @@ const initialState = {
         step_three: {},
         step_four: {},
         step_five: {},
-        step_six: {}
+        // step_six: {}
     },
     userInfo: {
         full_name: '',
