@@ -25,6 +25,7 @@ import ResultScreen from './components/ResultScreen'
 import { SpineFormProvider, useSpineForm } from './context/SpineFormContext'
 import { validateStep, getStepKey } from './utils/validationUtils'
 import videoData from './data/videoData'
+import { useIsDesktop } from './utils/desktopSIzeCheck'
 
 // Add or remove steps here — stepper & nav update automatically
 const STEPS = [
@@ -287,9 +288,11 @@ function DrawerContent_Inner() {
     }
   }
 
+  const isDesktopCheck = useIsDesktop();
+
   const headerContent = (
     <>
-      <p className='font-baloo' style={{ fontSize: 24, fontWeight: 600, color: '#313283', margin: '0' }}>
+      <p className='font-baloo' style={{ fontSize: 24, fontWeight: 600, color: '#313283', margin: '0'}}>
         Find your Spine Age
       </p>
       {!showResult && <Stepper totalSteps={total} currentStep={currentStep} />}
